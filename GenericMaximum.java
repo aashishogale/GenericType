@@ -28,5 +28,19 @@ public class GenericMaximum {
 
     }
 
+    public Character maxString(Character a, Character b, Character c){
+        Character max = a;
+        if (b > Math.max(a,c)) {
+            max = b;
+        }
+        if (c > Math.max(a, b)) {
+
+            max = c;
+
+        }
+        return max;
+
+    }
+
 
 }

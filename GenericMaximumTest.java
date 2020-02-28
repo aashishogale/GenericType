@@ -34,5 +34,20 @@ public class GenericMaximumTest {
         Assert.assertEquals(3.0, gen_max.maxFloat(1.0,2.0,3.0), 0.0f);
     }
 
+    @Test
+    public  void test_first_character_from_generic_maximum() {
+        Assert.assertSame('c', gen_max.maxString('a','b','c'));
+    }
 
+    @Test
+    public  void test_second_character_from_generic_maximum() {
+        Assert.assertSame('c', gen_max.maxString('a','c','b'));
+    }
+
+    @Test
+    public  void test_third_character_from_generic_maximum() {
+        Assert.assertSame('c', gen_max.maxString('a','b','c'));
+    }
+
+    
 }
