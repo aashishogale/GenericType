@@ -1,11 +1,33 @@
-public class GenericMaximum {
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Collections;
 
-    public Integer maxInteger(Integer a, Integer b, Integer c){
+public class GenericMaximum<T extends Comparable<T>> {
+
+    T a;
+    T b;
+    T c;
+    ArrayList<T> array;
+
+    public GenericMaximum() {
+    }
+
+    public GenericMaximum(ArrayList<T> t) {
+       this.array = t;
+    }
+
+    public GenericMaximum(T a, T b, T c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
+
+    public Integer maxInteger(Integer a, Integer b, Integer c) {
         Integer max = a;
-        if (b > Math.max(a,c)) {
+        if (b.compareTo(max) > 0) {
             max = b;
         }
-        if (c > Math.max(a, b)) {
+        if (c.compareTo(max) > 0) {
 
             max = c;
 
@@ -14,12 +36,12 @@ public class GenericMaximum {
 
     }
 
-    public Double maxFloat(Double a, Double b, Double c){
+    public Double maxFloat(Double a, Double b, Double c) {
         Double max = a;
-        if (b > Math.max(a,c)) {
+        if (b.compareTo(max) > 0) {
             max = b;
         }
-        if (c > Math.max(a, b)) {
+        if (c.compareTo(max) > 0) {
 
             max = c;
 
@@ -28,17 +50,50 @@ public class GenericMaximum {
 
     }
 
-    public Character maxString(Character a, Character b, Character c){
-        Character max = a;
-        if (b > Math.max(a,c)) {
+    public String maxString(String a, String b, String c) {
+        String max = a;
+        if (b.compareTo(max) > 0) {
             max = b;
         }
-        if (c > Math.max(a, b)) {
+        if (c.compareTo(max) > 0) {
 
             max = c;
 
         }
         return max;
+
+    }
+
+    public <T extends Comparable<T>> T maxValue(T a, T b, T c) {
+        T max = a;
+        if (b.compareTo(max) > 0) {
+            max = b;
+        }
+        if (c.compareTo(max) > 0) {
+
+            max = c;
+
+        }
+        return max;
+
+    }
+
+    public T maxValue() {
+        T max = this.a;
+        if (this.b.compareTo(max) > 0) {
+            max = this.b;
+        }
+        if (this.c.compareTo(max) > 0) {
+
+            max = this.c;
+
+        }
+        return max;
+
+    }
+
+    public T maxArray() {
+        return Collections.max(array);
 
     }
 
