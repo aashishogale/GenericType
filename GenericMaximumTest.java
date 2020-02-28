@@ -5,12 +5,10 @@ import org.junit.Test;
 public class GenericMaximumTest {
 
     @Test
-    public  void maxInteger() {
-        GenericMaximum  gm = new GenericMaximum();
-        System.out.println(gm.maxInteger(1,2, 4));
-//        assert gm.maxInteger(1,2,3) == 3;
+    public  void test_max_integer_from_generic_maximum() {
 
-        Assert.assertSame(3, gm.maxInteger(1,2,3));
+        GenericMaximum  gen_max = new GenericMaximum();
+        Assert.assertSame(3, gen_max.maxInteger(1,2,3));
     }
 
 
